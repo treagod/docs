@@ -1,0 +1,65 @@
+# Project Information
+site_name: Grip
+site_url: https://grip-framework.github.io/docs
+site_author: Grip Community
+site_description: Grip documentation (web framework for Crystal).
+
+# Repository
+repo_name: Grip Github
+repo_url: https://github.com/grip-framework/grip
+
+# Copyright
+copyright: "Copyright &copy; Grip Community 2020"
+
+# Configuration
+theme:
+  name: material
+  language: en
+
+  palette:
+    primary: white
+
+  logo: https://raw.githubusercontent.com/grip-framework/medias/master/gripen.svg
+  favicon: https://raw.githubusercontent.com/grip-framework/medias/master/gripen.svg
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/grip-framework/grip
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+
+nav:
+  - Introduction: "index.md"
+  - Installation: "installation.md"
+  - Getting Started: "getting_started.md"
+  - Context: "context.md"
+  - Routing:
+      - Basic routing: "basic_routing.md"
+      - Intermediate routing: "intermediate_routing.md"
+      - Advanced routing: "advanced_routing.md"
+      - WebSocket routing: "web_socket_routing.md"
+      - Available verbs: "verbs.md"
+  - Middleware:
+      - Pipe middleware: "pipe_middleware.md"
+      - Raw middleware: "raw_middleware.md"
+      - Built-in:
+          - Basic authorization: "pipe_basic.md"
+          - JWT authorization: "pipe_jwt.md"
+          - Client IP: "pipe_client_ip.md"
+          - Powered by header: "pipe_powered_by_header.md"
+          - Secure headers: "pipe_secure_headers.md"
+
+  - Filtering: "filtering.md"
+  - Error handling: "error_handling.md"
+  - SSL: "ssl.md"
+  - Deployment: "deployment.md"
+  - Testing: "testing.md"
