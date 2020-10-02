@@ -38,9 +38,10 @@ markdown_extensions:
       permalink: true
 
 nav:
-  - Introduction: "index.md"
-  - Installation: "installation.md"
-  - Getting Started: "getting_started.md"
+  - Introduction:
+      - Prelude: "index.md"
+      - Installation: "installation.md"
+      - Getting Started: "getting_started.md"
   - Context: "context.md"
   - Routing:
       - Basic routing: "basic_routing.md"
