@@ -1,7 +1,7 @@
 # Project Information
 site_name: Grip
 site_url: https://grip-framework.github.io/docs
-site_author: Grip Community
+site_author: Grip framework and its contributors
 site_description: Grip documentation (web framework for Crystal).
 
 # Repository
@@ -9,7 +9,7 @@ repo_name: Grip Github
 repo_url: https://github.com/grip-framework/grip
 
 # Copyright
-copyright: "Copyright &copy; Grip Community 2020"
+copyright: "Copyright &copy; Grip framework and its contributors 2020"
 
 # Configuration
 theme:
