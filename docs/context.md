@@ -12,10 +12,10 @@ Context is a class which contains the Request, Response structures of an HTTP se
 [`put_resp_header/2`](#put_resp_header)
 [`put_status/1`](#put_status)
 [`send_resp`/1](#send_resp)
-[`json/1`](#json)
-[`html/1`](#html)
-[`text/1`](#text)
-[`binary/1`](#binary)
+[`json/2`](#json)
+[`html/2`](#html)
+[`text/2`](#text)
+[`binary/2`](#binary)
 [`fetch_json_params/0`](#fetch_json_params)
 [`fetch_query_params/0`](#fetch_query_params)
 [`fetch_body_params/0`](#fetch_body_params)
@@ -159,16 +159,20 @@ end
 
 Sends JSON response.
 
+The function has an optional second argument for the `Content-Type` header.
+
 ```ruby
 def get(context)
   context
-    .json("Hello, World!")
+    .json("Hello, World!", "application/json; charset=UTF-8")
 end
 ```
 
 ### html
 
 Sends HTML response.
+
+The function has an optional second argument for the `Content-Type` header.
 
 ```ruby
 def get(context)
@@ -181,6 +185,8 @@ end
 
 Sends text response.
 
+The function has an optional second argument for the `Content-Type` header.
+
 ```ruby
 def get(context)
   context
@@ -191,6 +197,8 @@ end
 ### binary
 
 Sends binary response.
+
+The function has an optional second argument for the `Content-Type` header.
 
 ```ruby
 def get(context)
