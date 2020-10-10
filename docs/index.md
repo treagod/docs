@@ -23,3 +23,5 @@ src/
             filter/        # Filter directory
 shards.yml                 # The packages congfiuration file
 ```
+
+For a better representation of the structure and a starting point use a `cookiecutter` template defined [here](https://github.com/grip-framework/cookiecutter-grip-api).
