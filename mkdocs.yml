@@ -19,8 +19,8 @@ theme:
   palette:
     primary: white
 
-  logo: https://raw.githubusercontent.com/grip-framework/medias/master/gripen.svg
-  favicon: https://raw.githubusercontent.com/grip-framework/medias/master/gripen.svg
+  logo: https://raw.githubusercontent.com/grip-framework/medias/master/framework.svg
+  favicon: https://raw.githubusercontent.com/grip-framework/medias/master/framework.svg
 
 # Customization
 extra:
