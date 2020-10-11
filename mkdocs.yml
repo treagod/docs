@@ -19,8 +19,8 @@ theme:
   palette:
     primary: white
 
-  logo: https://raw.githubusercontent.com/grip-framework/medias/master/framework.svg
-  favicon: https://raw.githubusercontent.com/grip-framework/medias/master/framework.svg
+  logo: https://github.com/grip-framework/medias/raw/master/grip_gitter.png
+  favicon: https://github.com/grip-framework/medias/raw/master/grip_gitter.png
 
 # Customization
 extra:
