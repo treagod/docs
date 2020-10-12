@@ -35,6 +35,9 @@ class Application < Grip::Application
     get "/", DemoController
   end
 end
+
+app = Application.new
+app.run
 ```
 
 4.Run server.
@@ -46,7 +49,7 @@ crystal src/demo.cr
 5.Send request.
 
 ```shell
-curl "http://0.0.0.0:3000/"
+curl "http://0.0.0.0:5000/"
 ```
 
 6.Auto restart server.
