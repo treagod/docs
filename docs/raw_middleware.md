@@ -12,9 +12,16 @@ class DemoHandler
 end
 
 class Application < Grip::Application
-  def initialize
+  def router
+    [
+      @log_handler,
+      DemoHandler.new, # This is how you build a router stack and add a middleware to it, here are all the handlers available: https://github.com/grip-framework/grip/blob/master/src/grip/application.cr#L22
+      @http_handler
+    ] of HTTP::Handler
+  end
+
+  def routes
     # Add the middleware to the central stack.
-    Grip.config.add_handler DemoHandler.new
   end
 end
 ```

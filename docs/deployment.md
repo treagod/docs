@@ -8,16 +8,16 @@ Cross-compilation is supported and it can be achieved using [this guide](http://
 
 ## Environment
 
-Grip respects the APP_ENV environment variable and Grip.config.env. It is set to development by default.
+Grip respects the development/production flags, It is set to none by default.
 
 To change this value to production, for example, use:
 
 ```bash
-$ export APP_ENV=production
+crystal run ./src/application.cr -Dproduction
 ```
 
-If you prefer to do this from within your application, use:
+To change this value to development, for example, use:
 
-```ruby
-Grip.config.env = "production"
+```bash
+crystal run ./src/application.cr -Ddevelopment
 ```

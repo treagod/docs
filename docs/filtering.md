@@ -13,7 +13,7 @@ class DemoFilter < Grip::Controllers::Filter
 end
 
 class Application < Grip::Application
-  def initialize
+  def routes
     filter :before, :get, "/", DemoFilter
   end
 end
@@ -30,7 +30,7 @@ class DemoFilter < Grip::Controllers::Filter
 end
 
 class Application < Grip::Application
-  def initialize
+  def routes
     filter :after, :post, "/", DemoFilter
   end
 end

@@ -2,7 +2,7 @@ Basic authorization is based upon an Base64 encoded header present in the reques
 
 ```ruby
 class Application
-  def initialize
+  def routes
     pipeline :auth, [
       Grip::Pipes::Basic.new("username", "password")
     ]

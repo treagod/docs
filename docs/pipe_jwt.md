@@ -13,7 +13,7 @@ class DemoController < Grip::Controllers::Http
 end
 
 class Application < Grip::Application
-  def initialize
+  def routes
     pipeline :api, [
       Grip::Pipes::Jwt.new
     ]
@@ -44,8 +44,8 @@ You can use the encode and decode functions like this:
 
 #
 # For example:
-#
-#   Grip::Pipes::Jwt.encode_and_sing(
+#   include Pipes::Twj
+#   encode_and_sign(
 #     data: {
 #       "id" => 1
 #     },
@@ -54,7 +54,9 @@ You can use the encode and decode functions like this:
 #   )
 #
 
-Grip::Pipes::Jwt.encode_and_sign(
+include Pipes::Twj
+
+encode_and_sign(
   data: {
     "id" => 1
   }
@@ -66,8 +68,8 @@ Grip::Pipes::Jwt.encode_and_sign(
 
 #
 # For example:
-#
-#   Grip::Pipes::Jwt.decode_and_verify(
+#   include Pipes::Twj
+#   decode_and_verify(
 #     data: "eyOinniewi==",
 #     claims: {
 #       :aud => "Nothing",
@@ -79,7 +81,9 @@ Grip::Pipes::Jwt.encode_and_sign(
 #   )
 #
 
-Grip::Pipes::Jwt.decode_and_verify(
+include Pipes::Twj
+
+decode_and_verify(
   data: "eyOnwindOWNIRnoninWINR==" # This is not valid JWT.
 )
 ```

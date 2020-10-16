@@ -42,6 +42,7 @@ nav:
       - Prelude: "index.md"
       - Installation: "installation.md"
       - Getting Started: "getting_started.md"
+  - Application: "application.md"
   - Context: "context.md"
   - Routing:
       - Basic routing: "basic_routing.md"
@@ -49,10 +50,11 @@ nav:
       - Advanced routing: "advanced_routing.md"
       - WebSocket routing: "web_socket_routing.md"
       - Available verbs: "verbs.md"
+  - Runtime flags: "runtime_flags.md"
   - Middleware:
       - Pipe middleware: "pipe_middleware.md"
       - Raw middleware: "raw_middleware.md"
-      - Built-in:
+      - Pipes middleware:
           - Basic authorization: "pipe_basic.md"
           - JWT authorization: "pipe_jwt.md"
           - Client IP: "pipe_client_ip.md"

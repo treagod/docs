@@ -17,7 +17,7 @@ class DemoController < Grip::Controllers::Http
 end
 
 class Application < Grip::Application
-  def initialize
+  def routes
     # Creating a pipeline with a single pipe to be routed through.
     pipeline :web, [
       DemoPipe.new

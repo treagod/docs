@@ -37,7 +37,7 @@ class Index < Grip::Controllers::Http
 end
 
 class Application < Grip::Application
-  def initialize
+  def routes
     get "/", Index
   end
 end
@@ -49,7 +49,7 @@ app.run
 4.Now you can easily test your Grip application in your specs.
 
 ```bash
-APP_ENV=test crystal spec
+crystal spec -Dtest
 ```
 
 ```ruby

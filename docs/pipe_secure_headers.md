@@ -2,7 +2,7 @@ Secure headers are needed to avoid the problems which occur when the servers res
 
 ```ruby
 class Application < Grip::Application
-  def initialize
+  def routes
     pipeline :api, [
       Grip::Pipes::SecureHeaders.new
     ]

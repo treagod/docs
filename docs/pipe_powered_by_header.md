@@ -2,7 +2,7 @@ Powered by header provides a pipe which allows you to respond with a header cont
 
 ```ruby
 class Application < Grip::Application
-  def initiialize
+  def routes
     pipeline :api, [
       Grip::Pipes::PoweredByHeader.new
     ]

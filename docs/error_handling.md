@@ -28,7 +28,7 @@ class ForbiddenController < Grip::Controllers::Exception
 end
 
 class App < Grip::Application
-  def initialize
+  def routes
     error 403, ForbiddenController
     error 404, NotFoundController
   end

@@ -28,7 +28,7 @@ class DemoController < Grip::Controllers::WebSocket
 end
 
 class Application < Grip::Application
-  def initialize
+  def routes
     pipeline :api, [
       Grip::Pipes::PoweredByHeader.new
     ]
