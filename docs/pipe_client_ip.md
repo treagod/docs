@@ -13,7 +13,7 @@ end
 class Application < Grip::Application
   def routes
     pipeline :api, [
-      Grip::Pipes::ClientIp.new
+      Pipes::ClientIp.new
     ]
 
     get "/", DemoController, via: :api

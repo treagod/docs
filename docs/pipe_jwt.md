@@ -15,7 +15,7 @@ end
 class Application < Grip::Application
   def routes
     pipeline :api, [
-      Grip::Pipes::Jwt.new
+      Pipes::Jwt.new
     ]
 
     get "/", DemoController, via: :api
@@ -26,7 +26,7 @@ end
 You can configure the JWT pipe by:
 
 ```ruby
-Grip::Pipes::Jwt.new(
+Pipes::Jwt.new(
   secret_key: "CoolSecret!@#$%^&*()_+",
   claims: {
     :aud => "Authorization",

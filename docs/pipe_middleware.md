@@ -3,7 +3,7 @@ Pipe middleware is the building block of the framework, some helpful pipes are i
 Creating a custom pipe is as easy as creating an `HTTP handler`:
 
 ```ruby
-class DemoPipe < Grip::Pipes::Base
+class DemoPipe < Pipes::Base
   def call(context)
     # Mutate the context and pass it on to the next handler.
   end

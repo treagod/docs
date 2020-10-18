@@ -4,7 +4,7 @@ Powered by header provides a pipe which allows you to respond with a header cont
 class Application < Grip::Application
   def routes
     pipeline :api, [
-      Grip::Pipes::PoweredByHeader.new
+      Pipes::PoweredByHeader.new
     ]
   end
 end

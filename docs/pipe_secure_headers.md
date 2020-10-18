@@ -4,7 +4,7 @@ Secure headers are needed to avoid the problems which occur when the servers res
 class Application < Grip::Application
   def routes
     pipeline :api, [
-      Grip::Pipes::SecureHeaders.new
+      Pipes::SecureHeaders.new
     ]
   end
 end

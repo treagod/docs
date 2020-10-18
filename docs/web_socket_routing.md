@@ -30,11 +30,11 @@ end
 class Application < Grip::Application
   def routes
     pipeline :api, [
-      Grip::Pipes::PoweredByHeader.new
+      Pipes::PoweredByHeader.new
     ]
 
     pipeline :web, [
-      Grip::Pipes::SecureHeaders.new
+      Pipes::SecureHeaders.new
     ]
 
     # WebSockets support the pipeline routing, keep in mind that
