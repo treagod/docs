@@ -1,0 +1,47 @@
+Swagger is in essence an Interface Description Language for describing RESTful APIs expressed using JSON. Swagger is used together with a set of open-source software tools to design, build, document, and use RESTful web services.
+
+The class with documentation:
+
+```ruby
+alias Document = Grip::Annotations
+
+@[Document::Controller(description: "An example HTTP controller")]
+class HttpController < Grip::Controllers::Http
+  # See these documents for more information:
+  #   https://github.com/grip-framework/grip/blob/feature/swagger/src/grip/dsl/macros.cr#L38
+  #   https://github.com/icyleaf/swagger/
+  @[Document::Route(
+    method: "GET", # You have to specify by hand.
+    route: "/api/v1/", # You have to specify by hand.
+    description: "This is a description."
+    summary: "This route returns a response.",
+    parameters: [] of Swagger::Parameters, # https://github.com/icyleaf/swagger/blob/master/src/swagger/parameter.cr
+    responses: [] of Swagger::Response, # https://github.com/icyleaf/swagger/blob/master/src/swagger/response.cr
+    request: nil, # https://github.com/icyleaf/swagger/blob/master/src/swagger/request.cr
+    authorization: false,
+    deprecated: false
+  )]
+  def get(context : Context) : Context
+    context
+      .halt
+  end
+end
+```
+
+The application which instructs the `swagger` macro to document the class:
+
+```ruby
+class Application < Grip::Application
+  def routes
+    swagger [
+      HttpController
+    ]
+
+    scope "/api/v1" do
+      get "/", HttpController
+    end
+  end
+end
+```
+
+Compile the program with a runtime flag `-D swagger` to gain the features.
