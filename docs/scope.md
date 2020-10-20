@@ -1,8 +1,8 @@
-The routing mechanism is based on `Kemal` which uses the radix tree implementation to identify the URL patterns.
+Scope defines a prefix for routes which will be nested in a block.
 
 ```ruby
 class DemoController < Grip::Controllers::Http
-  def index(context)
+  def get(context)
     context
       .json(nil)
   end
@@ -13,9 +13,11 @@ class Application < Grip::Application
     # The routing occurs via the `get` macro which instantiates the controller class and assigns a route
     # to the routing mechanism.
     #
-    # `GET /` -> CLIENT -> SERVER -> ROUTER -> ROUTE -> CONTROLLER -> index/1
+    # `GET /api/v1/` -> CLIENT -> SERVER -> ROUTER -> ROUTE -> CONTROLLER -> get/1
     #
-    get "/", DemoController, as: :index
+    scope "/api/v1" do
+      get "/", DemoController
+    end
   end
 end
 ```

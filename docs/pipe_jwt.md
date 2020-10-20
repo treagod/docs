@@ -18,7 +18,11 @@ class Application < Grip::Application
       Pipes::Jwt.new
     ]
 
-    get "/", DemoController, via: :api
+    scope "/" do
+      pipe_through :api
+
+      get "/", DemoController
+    end
   end
 end
 ```

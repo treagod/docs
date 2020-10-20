@@ -2,27 +2,27 @@ WebSockets are easy to define and use thanks to the core team of the Crystal Pro
 
 ```ruby
 class DemoController < Grip::Controllers::WebSocket
-  def on_open(ctx, sock)
+  def on_open(context : Context)
     # Executed when a client opens a connection to the server.
   end
 
-  def on_message(ctx, sock, msg)
+  def on_message(context : Context, message : String)
     # Executed when a client sends a message.
   end
 
-  def on_ping(ctx, sock, ping)
+  def on_ping(context : Context, message : String)
     # Executed when a client pings the server.
   end
 
-  def on_pong(ctx, sock, pong)
+  def on_pong(context : Context, message : String)
     # Executed when a server receives a pong.
   end
 
-  def on_binary(ctx, sock, bin)
+  def on_binary(context : Context, binary : Bytes)
     # Executed when a client sends a binary message.
   end
 
-  def on_close(ctx, sock, err_code, err)
+  def on_close(context : Context, error_code : HTTP::WebSocket::CloseCode | Int?, message : String)
     # Executed when a client closes the connection to the server.
   end
 end
@@ -39,8 +39,12 @@ class Application < Grip::Application
 
     # WebSockets support the pipeline routing, keep in mind that
     # the `:id` URL here gives an option to fetch the `id` using the
-    # `context.fetch_path_params/0` function.
-    ws "/:id", DemoController, via: [:web, :api]
+    # `context : Context.fetch_path_params/0` function.
+    scope "/" do
+      pipe_through [:web, :api]
+
+      ws "/:id", DemoController
+    end
   end
 end
 ```

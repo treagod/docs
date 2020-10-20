@@ -48,6 +48,7 @@ nav:
       - Basic routing: "basic_routing.md"
       - Intermediate routing: "intermediate_routing.md"
       - Advanced routing: "advanced_routing.md"
+      - Scope: "scope.md"
       - WebSocket routing: "web_socket_routing.md"
       - Available verbs: "verbs.md"
   - Runtime flags: "runtime_flags.md"

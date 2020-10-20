@@ -24,7 +24,17 @@ class Application < Grip::Application
     # `GET /` -> CLIENT -> SERVER -> ROUTER -> ROUTE -> PIPELINE -> CONTROLLER -> index/1
     #
     # You can route the request through unlimited amounts of pipelines.
-    get "/", DemoController, override: :index, via: [:web, :api]
+    scope "/" do
+      pipe_through [:web, :api]
+
+      get "/", DemoController, as: :index
+    end
+
+    scope "/api/v1" do
+      pipe_through :api
+
+      get "/", DemoController, as: :index
+    end
   end
 end
 ```

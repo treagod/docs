@@ -23,7 +23,11 @@ class Application < Grip::Application
       DemoPipe.new
     ]
 
-    get "/", DemoController, via: :web
+    scope "/" do
+      pipe_through :web
+
+      get "/", DemoController
+    end
   end
 end
 ```
