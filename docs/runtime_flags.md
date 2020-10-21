@@ -37,6 +37,13 @@ crystal run ./src/appliaction.cr -D logs
 crystal run ./src/appliaction.cr -D swagger
 ```
 
+5.Flag which enables the Swagger UI support:
+
+```bash
+# -D is used to define a compile time flag.
+crystal run ./src/appliaction.cr -D serveStatic
+```
+
 # Environment flags
 
 1.Flag which switches the environment to testing:
