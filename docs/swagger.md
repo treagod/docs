@@ -13,9 +13,9 @@ class HttpController < Grip::Controllers::Http
   @[Document::Route(
     method: "GET", # You have to specify by hand.
     route: "/api/v1/", # You have to specify by hand.
-    description: "This is a description."
+    description: "This is a description.",
     summary: "This route returns a response.",
-    parameters: [] of Swagger::Parameters, # https://github.com/icyleaf/swagger/blob/master/src/swagger/parameter.cr
+    parameters: [] of Swagger::Parameter, # https://github.com/icyleaf/swagger/blob/master/src/swagger/parameter.cr
     responses: [] of Swagger::Response, # https://github.com/icyleaf/swagger/blob/master/src/swagger/response.cr
     request: nil, # https://github.com/icyleaf/swagger/blob/master/src/swagger/request.cr
     authorization: false,
