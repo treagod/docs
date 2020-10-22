@@ -48,3 +48,9 @@ class Application < Grip::Application
   end
 end
 ```
+
+Make sure to compile the application with WebSocket support:
+
+```bash
+crystal run ./src/appliaction.cr -D websocket
+```

@@ -20,7 +20,6 @@ src/
             http/          # HTTP directory
             websocket/     # WebSocket directory
             exception/     # Exception directory
-            filter/        # Filter directory
 shards.yml                 # The packages congfiuration file
 ```
 

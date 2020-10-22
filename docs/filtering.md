@@ -1,4 +1,5 @@
 **Important note: This should not be used by plugins/addons, instead they should do all their work in their own middleware.**
+**Deprecated: 4.x.x doesn't support filtering anymore**
 
 Before and after filters are evaluated before and after each request within the same context as the routes. They can modify the request and response.
 
