@@ -23,7 +23,7 @@ crystal run ./src/appliaction.cr -D logs
 crystal run ./src/appliaction.cr -D swagger
 ```
 
-3.Flag which enables the static file:
+3.Flag which enables the static file serving:
 
 ```bash
 # -D is used to define a compile time flag.
