@@ -2,27 +2,27 @@ WebSockets are easy to define and use thanks to the core team of the Crystal Pro
 
 ```ruby
 class DemoController < Grip::Controllers::WebSocket
-  def on_open(context : Context)
+  def on_open(context : Context, socket : Socket) : Void
     # Executed when a client opens a connection to the server.
   end
 
-  def on_message(context : Context, message : String)
+  def on_message(context : Context, socket : Socket, message : String) : Void
     # Executed when a client sends a message.
   end
 
-  def on_ping(context : Context, message : String)
+  def on_ping(context : Context, socket : Socket, message : String) : Void
     # Executed when a client pings the server.
   end
 
-  def on_pong(context : Context, message : String)
+  def on_pong(context : Context, socket : Socket, message : String) : Void
     # Executed when a server receives a pong.
   end
 
-  def on_binary(context : Context, binary : Bytes)
+  def on_binary(context : Context, socket : Socket, binary : Bytes) : Void
     # Executed when a client sends a binary message.
   end
 
-  def on_close(context : Context, error_code : HTTP::WebSocket::CloseCode | Int?, message : String)
+  def on_close(context : Context, socket : Socket, error_code : HTTP::WebSocket::CloseCode | Int?, message : String) : Void
     # Executed when a client closes the connection to the server.
   end
 end
