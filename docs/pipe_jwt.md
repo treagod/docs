@@ -2,7 +2,7 @@ JWT authorization is based upon an `Authorization` header present in the request
 
 ```ruby
 class DemoController < Grip::Controllers::Http
-  def get(context)
+  def get(context : Context) : Context
     context
       .json(
         {

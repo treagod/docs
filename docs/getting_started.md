@@ -18,7 +18,7 @@ dependencies:
 require "grip"
 
 class DemoController < Grip::Controllers::Http
-  def get(context)
+  def get(context : Context)
     context
       .put_status(201) # Put a response status code.
       .put_resp_header("Server", "TornadoServer/6.0.4") # Put a response header.

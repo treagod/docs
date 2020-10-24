@@ -2,7 +2,7 @@ Scope defines a prefix for routes which will be nested in a block.
 
 ```ruby
 class DemoController < Grip::Controllers::Http
-  def get(context)
+  def get(context : Context) : Context
     context
       .json(nil)
   end

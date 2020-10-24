@@ -8,7 +8,7 @@ The current filter supports all of the verbs which are RESTful, for example defi
 
 ```ruby
 class DemoFilter < Grip::Controllers::Filter
-  def call(context)
+  def call(context : Context) : Context
     context
       .json("Hello, World!")
   end
@@ -25,7 +25,7 @@ defining an after post filter looks like this:
 
 ```ruby
 class DemoFilter < Grip::Controllers::Filter
-  def call(context)
+  def call(context : Context) : Context
     context
       .json("Hello, World!")
   end

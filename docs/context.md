@@ -27,7 +27,7 @@ Context is a class which contains the Request, Response structures of an HTTP se
 Deletes a request header if present.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .delete_req_header("Referer")
     .text(nil)
@@ -39,7 +39,7 @@ end
 Deletes a response header if present.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .json("Hello, World!")
     .delete_resp_header("Content-Type")
@@ -51,7 +51,7 @@ end
 Returns the values of the request header specified by `key`.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   referer =
     context
       .get_req_header("Referer")
@@ -70,7 +70,7 @@ end
 Returns the values of the response header specified by `key`.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   content_type =
     context
       .get_resp_header("Content-Type")
@@ -89,7 +89,7 @@ end
 Halts the function chain by closing the response stream.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .json("Hello, World!")
     .halt
@@ -101,7 +101,7 @@ end
 Merges a series of response headers into the context.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .merge_resp_headers({"Content-Type" => "application/json"})
     .send_resp("Hello, World!")
@@ -113,7 +113,7 @@ end
 Adds a new request header `(key)` if not present, otherwise replaces the previous value of that header with `value`.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .put_req_header("Referer", "www.google.com")
     .json("Hello, World")
@@ -125,7 +125,7 @@ end
 Adds a new response header `(key)` if not present, otherwise replaces the previous value of that header with `value`.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .put_resp_header("Content-Type", "application/json")
     .send_resp("Hello, World!")
@@ -137,7 +137,7 @@ end
 Assigns the given status code to the context response.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .put_status(400)
     .json("Bad request")
@@ -149,7 +149,7 @@ end
 Sends a response to the client.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .send_resp("Hello, World!")
 end
@@ -162,7 +162,7 @@ Sends JSON response.
 The function has an optional second argument for the `Content-Type` header.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .json("Hello, World!", "application/json; charset=UTF-8")
 end
@@ -175,7 +175,7 @@ Sends HTML response.
 The function has an optional second argument for the `Content-Type` header.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .html("Hello, World!")
 end
@@ -188,7 +188,7 @@ Sends text response.
 The function has an optional second argument for the `Content-Type` header.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .text("Hello, World!")
 end
@@ -201,7 +201,7 @@ Sends binary response.
 The function has an optional second argument for the `Content-Type` header.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   context
     .binary("Hello, World!")
 end
@@ -212,7 +212,7 @@ end
 Fetches JSON parameters from the JSON parser.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   params =
     context
       .fetch_json_params
@@ -227,7 +227,7 @@ end
 Fetches query parameters from the query string.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   params =
     context
       .fetch_query_params
@@ -242,7 +242,7 @@ end
 Fetches body parameters from the body parser.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   params =
     context
       .fetch_body_params
@@ -257,7 +257,7 @@ end
 Fetches file parameters from the file parser.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   params =
     context
       .fetch_file_params
@@ -272,7 +272,7 @@ end
 Fetches path parameters from the path parser.
 
 ```ruby
-def get(context)
+def get(context : Context) : Context
   params =
     context
       .fetch_path_params

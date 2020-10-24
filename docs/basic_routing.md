@@ -2,7 +2,7 @@ Routing is the key feature which distinguishes Grip from other Crystal based web
 
 ```ruby
 class DemoController < Grip::Controllers::Http
-  def get(context)
+  def get(context : Context) : Context
     context
       .json(nil)
   end

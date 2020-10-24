@@ -6,7 +6,7 @@ In Grip raw middlewares are mentioned as handlers, when creating a handler you i
 class DemoHandler
   include HTTP::Handler
 
-  def call(context)
+  def call(context : HTTP::Server::Context) : HTTP::Server::Context
     # Mutate the context and pass it on to the next handler.
   end
 end

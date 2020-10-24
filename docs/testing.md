@@ -30,7 +30,7 @@ For example, your Grip application:
 require "grip"
 
 class Index < Grip::Controllers::Http
-  def get(context)
+  def get(context : Context) : Context
     context
       .text("Hello, World!")
   end

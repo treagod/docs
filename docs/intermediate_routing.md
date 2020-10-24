@@ -2,7 +2,7 @@ The routing mechanism is based on `Kemal` which uses the radix tree implementati
 
 ```ruby
 class DemoController < Grip::Controllers::Http
-  def index(context)
+  def index(context : Context) : Context
     context
       .json(nil)
   end

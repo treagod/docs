@@ -2,7 +2,7 @@ Client IP address is needed for tracking the requests, filtering blacklisted add
 
 ```ruby
 class DemoController < Grip::Controllers::Http
-  def get(context)
+  def get(context : Context) : Context
     puts context.asssigns.client_ip
 
     context

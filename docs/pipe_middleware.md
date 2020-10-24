@@ -4,13 +4,13 @@ Creating a custom pipe is as easy as creating an `HTTP handler`:
 
 ```ruby
 class DemoPipe < Pipes::Base
-  def call(context)
+  def call(context : HTTP::Server::Context) : HTTP::Server::Context
     # Mutate the context and pass it on to the next handler.
   end
 end
 
 class DemoController < Grip::Controllers::Http
-  def get(context)
+  def get(context : Context) : Context
     context
       .json("Hello, World!")
   end

@@ -2,7 +2,7 @@ The more advanced the route is the more time it takes when executed, since the c
 
 ```ruby
 class DemoController < Grip::Controllers::Http
-  def index(context)
+  def index(context : Context) : Context
     context
       .json(nil)
   end
