@@ -1,6 +1,6 @@
 ## Heroku
 
-You can use [heroku-buildpack-crystal](https://github.com/crystal-lang/heroku-buildpack-crystal) to deploy your Grip application to Heroku.
+You can use [heroku-buildpack-crystal](https://github.com/grip-framework/heroku-buildpack-crystal) to deploy your Grip application to Heroku.
 
 ## Cross Compilation
 
