@@ -15,8 +15,14 @@ class Application < Grip::Application
     #
     # `GET /api/v1/` -> CLIENT -> SERVER -> ROUTER -> ROUTE -> CONTROLLER -> get/1
     #
+    # `GET /api/v1/users/` -> CLIENT -> SERVER -> ROUTER -> ROUTE -> CONTROLLER -> get/1
+    # 
     scope "/api/v1" do
       get "/", DemoController
+
+      scope "/users" do
+        get "/", DemoController
+      end
     end
   end
 end

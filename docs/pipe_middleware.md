@@ -23,10 +23,21 @@ class Application < Grip::Application
       DemoPipe.new
     ]
 
+    pipeline :api, [
+      DemoPipe.new
+    ]
+
     scope "/" do
       pipe_through :web
 
       get "/", DemoController
+
+      scope "/users" do
+        # This will go through [:web, :api].
+        pipe_through :api
+
+        get "/", DemoController
+      end
     end
   end
 end
