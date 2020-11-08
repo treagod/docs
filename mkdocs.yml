@@ -44,6 +44,7 @@ nav:
       - Getting Started: "getting_started.md"
   - Application: "application.md"
   - Context: "context.md"
+  - Parameter validation: "parameter_validation.md"
   - Routing:
       - Basic routing: "basic_routing.md"
       - Intermediate routing: "intermediate_routing.md"
