@@ -12,9 +12,6 @@ class Application < Grip::Application
   def routes
     # The routing occurs via the `get` macro which instantiates the controller class and assigns a route
     # to the routing mechanism.
-    #
-    # `GET /` -> CLIENT -> SERVER -> ROUTER -> ROUTE -> CONTROLLER -> get/1
-    #
     get "/", DemoController
   end
 end

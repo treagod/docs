@@ -4,7 +4,7 @@ Grip comes with a pre-defined error handlers for the JSON response type. You can
 class IndexController < Grip::Controllers::Http
   def get(context : Context) : Context
     # Pre-defined classes for specific error codes, https://github.com/grip-framework/exceptions.
-    raise Exceptions::NotFound.new
+    raise Grip::Exceptions::NotFound.new
   end
 end
 
@@ -62,7 +62,7 @@ and this will trigger an error handler defined in the routes method of the appli
 ```ruby
 class IndexController < Grip::Controllers::Http
   def get(context : Context) : Context
-    raise Exceptions::NotFound.new
+    raise Grip::Exceptions::NotFound.new
   end
 end
 ```
@@ -70,7 +70,7 @@ end
 you can also raise any exception you want and handle it in the error handler like this:
 
 ```ruby
-class ArgumentException < Exceptions::Base
+class ArgumentException < Grip::Exceptions::Base
   @status = HTTP::Status::BAD_REQUEST
 
   def initialize(@message : String = "Argument error")
@@ -86,7 +86,7 @@ end
 class BadRequestController < Grip::Controllers::Exception
   def call(context : Context) : Context
     case context.exception.not_nil!
-    when ::Exceptions::BadRequest
+    when Grip::Exceptions::BadRequest
       context
         .json(
           {

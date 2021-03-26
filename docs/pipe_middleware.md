@@ -1,9 +1,12 @@
-Pipe middleware is the building block of the framework, some helpful pipes are included with the framework.
+Pipe middleware is the building block of the framework.
 
 Creating a custom pipe is as easy as creating an `HTTP handler`:
 
 ```ruby
-class DemoPipe < Pipes::Base
+class DemoPipe
+  include HTTP::Handler
+
+  # Keep in mind calling the call_next() function is prohibited here.
   def call(context : HTTP::Server::Context) : HTTP::Server::Context
     # Mutate the context and pass it on to the next handler.
   end

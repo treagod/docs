@@ -14,13 +14,7 @@ src/
     echo_web/              # Web layer to interact with the business layer.
         views/             # Views directory
             ...
-        pipes/             # Pipes directory
-            ...
         controllers/       # Controllers directory
-            http/          # HTTP directory
-            websocket/     # WebSocket directory
-            exception/     # Exception directory
+            ...
 shards.yml                 # The packages congfiuration file
 ```
-
-For a better representation of the structure and a starting point use a `cookiecutter` template defined [here](https://github.com/grip-framework/cookiecutter-grip-api).

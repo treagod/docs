@@ -11,8 +11,6 @@ class HttpController < Grip::Controllers::Http
   #   https://github.com/grip-framework/grip/blob/feature/swagger/src/grip/dsl/macros.cr#L38
   #   https://github.com/icyleaf/swagger/
   @[Document::Route(
-    method: "GET", # You have to specify by hand.
-    route: "/api/v1/", # You have to specify by hand.
     description: "This is a description.",
     summary: "This route returns a response.",
     parameters: [] of Swagger::Parameter, # https://github.com/icyleaf/swagger/blob/master/src/swagger/parameter.cr
@@ -33,15 +31,15 @@ The application which instructs the `swagger` macro to document the class:
 ```ruby
 class Application < Grip::Application
   def routes
-    swagger [
-      HttpController
-    ]
 
-    scope "/api/v1" do
+    scope "/api" do
+      forward "/swagger/*",
+        Grip::ThirdParty::Swagger::Interface,
+        document: document(),
+        base_path: "/api/swagger"
+
       get "/", HttpController
     end
   end
 end
 ```
-
-Compile the program with a runtime flag `-D swagger` to gain the features.

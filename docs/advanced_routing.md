@@ -21,8 +21,6 @@ class Application < Grip::Application
     # The routing occurs via the `get` macro which instantiates the controller class and assigns a route
     # to the routing mechanism.
     #
-    # `GET /` -> CLIENT -> SERVER -> ROUTER -> ROUTE -> PIPELINE -> CONTROLLER -> index/1
-    #
     # You can route the request through unlimited amounts of pipelines.
     scope "/" do
       pipe_through [:web, :api]
