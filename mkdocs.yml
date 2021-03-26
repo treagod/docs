@@ -58,7 +58,6 @@ nav:
       - Pipe middleware: "pipe_middleware.md"
       - Raw middleware: "raw_middleware.md"
   - Error handling: "error_handling.md"
-  - Static resources: "static.md"
   - Swagger: "swagger.md"
   - GraphQL: "graphql.md"
   - SSL: "ssl.md"
