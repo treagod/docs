@@ -11,7 +11,8 @@ end
 class Application < Grip::Application
   def routes
     # The routing occurs via the `get` macro which instantiates the controller class and assigns a route
-    # to the routing mechanism.
+    # to the routing mechanism, the `as` keyword creates a Proc(Context, Context) and wraps it around
+    # the index/1 function f the DemoController.
     get "/", DemoController, as: :index
   end
 end
