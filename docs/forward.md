@@ -1,4 +1,4 @@
-Forward forwards a request to a specific route, mainly a HTTP::Handler class.
+Forward forwards a request to a specific route, mainly a Grip::Controller::Base class.
 
 ```ruby
 class Authorization < Grip::Controllers::Base
