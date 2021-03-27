@@ -3,7 +3,6 @@ Grip comes with a pre-defined error handlers for the JSON response type. You can
 ```ruby
 class IndexController < Grip::Controllers::Http
   def get(context : Context) : Context
-    # Pre-defined classes for specific error codes, https://github.com/grip-framework/exceptions.
     raise Grip::Exceptions::NotFound.new
   end
 end

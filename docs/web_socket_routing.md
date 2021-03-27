@@ -27,14 +27,32 @@ class DemoController < Grip::Controllers::WebSocket
   end
 end
 
+class PoweredByHeader
+  include HTTP::Handler
+  
+  def call(context)
+    context
+      .put_resp_header("Server", "grip")
+  end
+end
+
+class SecureHeaders
+  include HTTP::Handler
+  
+  def call(context)
+    context
+      .put_resp_header("Security", "YES")
+  end
+end
+
 class Application < Grip::Application
   def routes
     pipeline :api, [
-      Pipes::PoweredByHeader.new
+      PoweredByHeader.new
     ]
 
     pipeline :web, [
-      Pipes::SecureHeaders.new
+      SecureHeaders.new
     ]
 
     # WebSockets support the pipeline routing, keep in mind that
