@@ -8,7 +8,7 @@ alias Document = Grip::Annotations
 @[Document::Controller(description: "An example HTTP controller")]
 class HttpController < Grip::Controllers::Http
   # See these documents for more information:
-  #   https://github.com/grip-framework/grip/blob/feature/swagger/src/grip/dsl/macros.cr#L38
+  #   https://github.com/grip-framework/grip/blob/master/src/grip/dsl/macros.cr
   #   https://github.com/icyleaf/swagger/
   @[Document::Route(
     description: "This is a description.",
