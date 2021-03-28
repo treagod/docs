@@ -59,7 +59,6 @@ nav:
       - Raw middleware: "raw_middleware.md"
   - Error handling: "error_handling.md"
   - Swagger: "swagger.md"
-  - GraphQL: "graphql.md"
   - SSL: "ssl.md"
   - Deployment: "deployment.md"
   - Testing: "testing.md"
