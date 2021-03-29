@@ -46,6 +46,14 @@ class SecureHeaders
 end
 
 class Application < Grip::Application
+  def custom : Array(HTTP::Handler)
+    [] of HTTP::Handler
+  end
+
+  def root : Array(HTTP::Handler)
+    [] of HTTP::Handler
+  end
+
   def routes
     pipeline :api, [
       PoweredByHeader.new

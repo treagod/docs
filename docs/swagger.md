@@ -30,6 +30,14 @@ The application which instructs the `swagger` macro to document the class:
 
 ```ruby
 class Application < Grip::Application
+  def custom : Array(HTTP::Handler)
+    [] of HTTP::Handler
+  end
+
+  def root : Array(HTTP::Handler)
+    [] of HTTP::Handler
+  end
+
   def routes
 
     scope "/api" do

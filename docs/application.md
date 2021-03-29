@@ -3,6 +3,8 @@ Application class is a building class which initializes the crucial parts of the
 ## Available methods
 
 [`host/0`](#host)
+[`root/0`](#root)
+[`custom/0`](#custom)
 [`port/0`](#port)
 [`reuse_port/0`](#reuse_port)
 [`router/0`](#router)
@@ -10,6 +12,7 @@ Application class is a building class which initializes the crucial parts of the
 [`key_file/0`](#key_file)
 [`cert_file/0`](#cert_file)
 [`run/0`](#run)
+
 
 ### host
 
@@ -19,6 +22,30 @@ The host of the server.
 class Application < Grip::Application
   def host
     "127.0.0.1"
+  end
+end
+```
+
+### root
+
+The root handlers inserted before the Exception handler.
+
+```ruby
+class Application < Grip::Application
+  def root : Array(HTTP::Handler)
+    [] of HTTP::Handler
+  end
+end
+```
+
+### custom
+
+The custom handlers inserted after the Exception handler.
+
+```ruby
+class Application < Grip::Application
+  def custom : Array(HTTP::Handler)
+    [] of HTTP::Handler
   end
 end
 ```

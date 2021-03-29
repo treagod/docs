@@ -11,17 +11,17 @@ end
 
 class Application < Grip::Application
   # These are inserted after the exception handler
-  def custom_handlers
+  def custom
     [
       DemoHandler.new
-    ]
+    ] of HTTP::Handler
   end
 
   # These are inserted before the exception handler
-  def root_handlers
+  def root : Array(HTTP::Handler)
     [
       DemoHandler.new
-    ]
+    ] of HTTP::Handler
   end
 end
 ```
