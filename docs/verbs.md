@@ -2,13 +2,7 @@ There are several HTTP verbs supported by the router:
 
 ```ruby
 class Application < Grip::Application
-  def custom : Array(HTTP::Handler)
-    [] of HTTP::Handler
-  end
 
-  def root : Array(HTTP::Handler)
-    [] of HTTP::Handler
-  end
 
   def routes
     get "/", DemoController # Routes all the `GET /` requests to DemoController.get/1

@@ -10,13 +10,7 @@ class Authorization < Grip::Controllers::Base
 end
 
 class Application < Grip::Application
-  def custom : Array(HTTP::Handler)
-    [] of HTTP::Handler
-  end
 
-  def root : Array(HTTP::Handler)
-    [] of HTTP::Handler
-  end
   
   def routes
     # Forward macro simply routes the matched requests to a certain Base controller
