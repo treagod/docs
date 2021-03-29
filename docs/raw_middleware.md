@@ -11,7 +11,7 @@ end
 
 class Application < Grip::Application
   # These are inserted after the exception handler
-  def custom
+  def custom : Array(HTTP::Handler)
     [
       DemoHandler.new
     ] of HTTP::Handler
