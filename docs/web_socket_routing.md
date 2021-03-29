@@ -61,7 +61,8 @@ class Application < Grip::Application
     # the `:id` URL here gives an option to fetch the `id` using the
     # `context : Context.fetch_path_params/0` function.
     scope "/" do
-      pipe_through [:web, :api]
+      pipe_through :web
+      pipe_through :api
 
       ws "/:id", DemoController
     end

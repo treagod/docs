@@ -34,7 +34,8 @@ class Application < Grip::Application
     #
     # You can route the request through unlimited amounts of pipelines.
     scope "/" do
-      pipe_through [:web, :api]
+      pipe_through :web
+      pipe_through :api
 
       get "/", DemoController, as: :index
     end
