@@ -4,6 +4,7 @@
 dependencies:
   grip:
     github: grip-framework/grip
+    version: "1.0.0"
 
   spec-grip:
     github: grip-framework/spec-grip
