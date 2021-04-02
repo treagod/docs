@@ -16,5 +16,5 @@ src/
             ...
         controllers/       # Controllers directory
             ...
-shards.yml                 # The packages congfiuration file
+shards.yml                 # The package configuration file
 ```
