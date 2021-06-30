@@ -20,7 +20,7 @@ The host of the server.
 
 ```ruby
 class Application < Grip::Application
-  def host
+  def host : String
     "127.0.0.1"
   end
 end
@@ -56,7 +56,7 @@ The port of the server.
 
 ```ruby
 class Application < Grip::Application
-  def port
+  def port : Int32
     6969
   end
 end
@@ -68,7 +68,7 @@ The reuse_port boolean of the server.
 
 ```ruby
 class Application < Grip::Application
-  def reuse_port
+  def reuse_port : Bool
     true
   end
 end
@@ -80,7 +80,7 @@ The router of the application.
 
 ```ruby
 class Application < Grip::Application
-  def router
+  def router : Array(HTTP::Handler)
     [] of HTTP::Handler
   end
 end
@@ -92,7 +92,7 @@ The server of the application.
 
 ```ruby
 class Application < Grip::Application
-  def server
+  def server : HTTP::Server
     HTTP::Server.new(router)
   end
 end
@@ -104,7 +104,7 @@ The key_file of the application.
 
 ```ruby
 class Application < Grip::Application
-  def key_file
+  def key_file : String
     "SSL_KEY_FILE_LOCATION"
   end
 end
@@ -116,7 +116,7 @@ The cert_file of the application.
 
 ```ruby
 class Application < Grip::Application
-  def cert_file
+  def cert_file : String
     "SSL_CERTIFICATE_FILE_LOCATION"
   end
 end

@@ -29,8 +29,8 @@ end
 
 class PoweredByHeader
   include HTTP::Handler
-  
-  def call(context)
+
+  def call(context : HTTP::Server::Context) : HTTP::Server::Context
     context
       .put_resp_header("Server", "grip")
   end
@@ -38,10 +38,10 @@ end
 
 class SecureHeaders
   include HTTP::Handler
-  
-  def call(context)
+
+  def call(context : HTTP::Server::Context) : HTTP::Server::Context
     context
-      .put_resp_header("Security", "YES")
+      .put_resp_header("Security", "Absolutely")
   end
 end
 

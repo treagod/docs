@@ -3,8 +3,8 @@ The more advanced the route is the more time it takes when executed, since the c
 ```ruby
 class AuthorizationHandler
   include HTTP::Handler
-  
-  def call(context)
+
+  def call(context : HTTP::Server::Context) : HTTP::Server::Context
     context
       .put_req_header("Authorization", "Bearer eyMANEmJeFF=")
   end
@@ -18,8 +18,6 @@ class DemoController < Grip::Controllers::Http
 end
 
 class Application < Grip::Application
-
-
   def routes
     pipeline :api, [
       AuthorizationHandler.new
@@ -42,7 +40,7 @@ class Application < Grip::Application
 
     scope "/api" do
       pipe_through :api
-      
+
       scope "/v1" do
         get "/", DemoController, as: :index
       end

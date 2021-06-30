@@ -10,7 +10,6 @@ crystal init app demo && cd demo
 dependencies:
   grip:
     github: grip-framework/grip
-    version: "1.0.0"
 ```
 
 3.Write down the following code in `src/demo.cr`.
@@ -32,8 +31,6 @@ class DemoController < Grip::Controllers::Http
 end
 
 class Application < Grip::Application
-
-
   def routes
     get "/", DemoController
   end
