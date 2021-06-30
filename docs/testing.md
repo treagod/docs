@@ -4,7 +4,6 @@
 dependencies:
   grip:
     github: grip-framework/grip
-    version: "1.0.0"
 
   spec-grip:
     github: grip-framework/spec-grip
@@ -38,8 +37,6 @@ class Index < Grip::Controllers::Http
 end
 
 class Application < Grip::Application
-
-
   def routes
     get "/", Index
   end

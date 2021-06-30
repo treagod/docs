@@ -29,8 +29,8 @@ end
 
 class PoweredByHeader
   include HTTP::Handler
-  
-  def call(context)
+
+  def call(context : HTTP::Server::Context) : HTTP::Server::Context
     context
       .put_resp_header("Server", "grip")
   end
@@ -38,10 +38,10 @@ end
 
 class SecureHeaders
   include HTTP::Handler
-  
-  def call(context)
+
+  def call(context : HTTP::Server::Context) : HTTP::Server::Context
     context
-      .put_resp_header("Security", "YES")
+      .put_resp_header("Security", "Absolutely")
   end
 end
 
@@ -68,10 +68,4 @@ class Application < Grip::Application
     end
   end
 end
-```
-
-Make sure to compile the application with WebSocket support:
-
-```bash
-crystal run ./src/appliaction.cr -D websocket
 ```

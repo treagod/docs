@@ -30,8 +30,6 @@ The application which instructs the `swagger` macro to document the class:
 
 ```ruby
 class Application < Grip::Application
-
-
   def routes
 
     scope "/api" do

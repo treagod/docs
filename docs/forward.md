@@ -2,7 +2,7 @@ Forward forwards a request to a specific route, mainly a Grip::Controllers::Base
 
 ```ruby
 class Authorization < Grip::Controllers::Base
-  def initialize(@username : String, @password); end
+  def initialize(@username : String, @password : String); end
 
   def call(context : Context) : Context
     context
@@ -10,8 +10,6 @@ class Authorization < Grip::Controllers::Base
 end
 
 class Application < Grip::Application
-
-  
   def routes
     # Forward macro simply routes the matched requests to a certain Base controller
     # which contains a single call/1 function.
